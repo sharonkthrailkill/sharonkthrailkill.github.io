@@ -15,7 +15,7 @@ body {
 
 .sidebar {
   background-color: rgba(11, 11, 26, 0.95);
-  width: 300px;
+  width: 280px;
   padding: 40px 24px;
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.6);
   border-right: 1px solid rgba(255, 255, 255, 0.05);
@@ -29,17 +29,18 @@ body {
 .sidebar h1 {
   font-size: 1.8rem;
   margin: 0 0 8px;
+  color: #f05eff;
 }
 
 .sidebar .role {
-  color: #a7a7ad;
+  color: #e7e7ea;
   margin: 0 0 20px;
 }
 
 .sidebar h2 {
   font-size: 1rem;
   text-transform: uppercase;
-  color: #9ec1ff;
+  color: #f05eff;
   letter-spacing: 1px;
   margin-top: 24px;
   margin-bottom: 8px;
@@ -52,7 +53,7 @@ body {
 }
 
 .sidebar a {
-  color: #9ec1ff;
+  color: #5bc8ff;
   text-decoration: none;
 }
 .sidebar a:hover {
@@ -60,8 +61,8 @@ body {
 }
 
 .content {
-  margin-left: 300px; 
-  padding: 60px 40px;
+  margin-left: 320px; 
+  padding: 0px 60px;
 }
 
 @media (max-width: 700px) {
@@ -92,7 +93,43 @@ body {
   left: 0;
   width: 60%;
   height: 2px;
-  background: #9ec1ff;
+  background: #5bc8ff;
   border-radius: 2px;
 }
 
+#projects h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #f05eff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.project-box {
+  background: rgba(11, 11, 26, 0.95); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  aspect-ratio: 1 / 1; 
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-box:hover {
+  border-color: #5bc8ff;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1000px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
