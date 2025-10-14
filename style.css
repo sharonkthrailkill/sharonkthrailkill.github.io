@@ -13,19 +13,6 @@ body {
   background-size: cover; 
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color: #e7e7ea;
-  background-color: #0b0b1a;
-  background-image: url("images/neon-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  display: flex;
-  min-height: 100vh;
-}
-
 .sidebar {
   background-color: #0b0b1a;
   width: 280px;
