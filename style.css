@@ -14,8 +14,8 @@ body {
 }
 
 .sidebar {
-  background-color: #0b0b1a;
-  width: 280px;
+  background-color: rgba(11, 11, 26, 0.95);
+  width: 300px;
   padding: 40px 24px;
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.6);
   border-right: 1px solid rgba(255, 255, 255, 0.05);
@@ -60,6 +60,39 @@ body {
 }
 
 .content {
-  margin-left: 280px; 
+  margin-left: 300px; 
   padding: 60px 40px;
 }
+
+@media (max-width: 700px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border-right: none;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 20px;
+  }
+}
+
+.sidebar h1 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+.sidebar h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 2px;
+  background: #9ec1ff;
+  border-radius: 2px;
+}
+
