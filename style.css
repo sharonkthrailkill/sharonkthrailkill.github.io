@@ -12,3 +12,67 @@ body {
   background-position: center;
   background-size: cover; 
 }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #e7e7ea;
+  background-color: #0b0b1a;
+  background-image: url("images/neon-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #0b0b1a;
+  width: 280px;
+  padding: 40px 24px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.6);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.sidebar h1 {
+  font-size: 1.8rem;
+  margin: 0 0 8px;
+}
+
+.sidebar .role {
+  color: #a7a7ad;
+  margin: 0 0 20px;
+}
+
+.sidebar h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #9ec1ff;
+  letter-spacing: 1px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.sidebar p {
+  margin: 0 0 10px;
+  color: #e7e7ea;
+  line-height: 1.6;
+}
+
+.sidebar a {
+  color: #9ec1ff;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  margin-left: 280px; 
+  padding: 60px 40px;
+}
