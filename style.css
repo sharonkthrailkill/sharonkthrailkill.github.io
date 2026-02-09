@@ -6,12 +6,13 @@ body {
 
   
   background-color: #0b0b1a;
-  background-image: url("images/neonlines.jpg");
+  background-image: url("images/glow-background.png");
   background-repeat: no-repeat;
   background-attachment: fixed; 
   background-position: center;
   background-size: cover; 
 }
+
 
 .sidebar {
   background-color: rgba(11, 11, 26, 0.95);
@@ -29,7 +30,7 @@ body {
 .sidebar h1 {
   font-size: 1.8rem;
   margin: 0 0 8px;
-  color: #f05eff;
+  color: #c7a6ff;
 }
 
 .sidebar .role {
@@ -40,7 +41,7 @@ body {
 .sidebar h2 {
   font-size: 1rem;
   text-transform: uppercase;
-  color: #f05eff;
+  color: #c7a6ff;
   letter-spacing: 1px;
   margin-top: 24px;
   margin-bottom: 8px;
@@ -100,7 +101,7 @@ body {
 #projects h2 {
   margin-bottom: 20px;
   font-size: 1.4rem;
-  color: #f05eff;
+  color: #c7a6ff;
 }
 
 .projects-grid {
@@ -133,3 +134,4 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
