@@ -62,7 +62,7 @@ body {
 }
 
 .content {
-  margin-left: 280px; 
+  margin-left: 260px; 
   padding: 0px 40px;
 }
 
@@ -125,6 +125,7 @@ body {
   min-height: 205px;
   transition: transform 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
+  margin-bottom: 6px;
 }
 
 .project-box:hover {
@@ -234,3 +235,176 @@ body {
   border: 1px solid rgba(255,255,255,0.12);
   color: #e7e7ea;
 }
+
+
+.project-box.case-study {
+  min-height: auto;   
+}
+
+.project-box.case-study .box-inner{
+  padding: 18px;
+  gap: 10px;
+}
+
+.project-box.case-study h3{
+  font-size: 1.2rem;
+  margin-bottom: 2px;
+}
+
+.project-box.case-study h4{
+  margin: 14px 0 6px;
+  font-size: 0.95rem;
+  color: #e7e7ea;
+  letter-spacing: 0.02em;
+}
+
+.project-box.case-study ul{
+  margin-top: 6px;
+}
+
+.project-meta p{
+  margin: 0;
+  color: #cfcfe6;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.section-split{
+  margin: 10px 0 4px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 16px;
+  color: #5bc8ff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.back-link:hover{
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.screenshot-grid figure {
+  background: rgba(11,11,26,0.95);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.screenshot-grid img {
+  width: 100%;
+  height: 220px;      
+  object-fit: cover;    
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.detail-card {
+  grid-column: span 1;
+}
+
+.detail-card.full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-card,
+  .detail-card.full {
+    grid-column: 1;
+  }
+}
+
+/* ===== Derby project detail layout ===== */
+
+.project-title{
+  margin: 0 0 14px;
+  font-size: 1.6rem;
+  color: #e7e7ea;
+}
+
+/* Two-up row: Overview + Key Features */
+.project-summary-grid{
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr; /* left a little wider */
+  gap: 28px;
+  max-width: 1050px;      /* keeps cards from feeling too wide */
+  margin: 0 auto 28px;    /* centers + space below row */
+  align-items: start;
+}
+
+/* Your existing .detail-card is fine; this just ensures clean sizing */
+.project-summary-grid .detail-card{
+  min-height: auto;
+}
+
+/* Full-width sections (screenshots) */
+.detail-card.full{
+  max-width: 1050px;   /* match the row width */
+  margin: 0 auto;      /* center it */
+}
+
+/* Screenshots grid */
+.screenshots-card .screenshot-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.screenshots-card figure{
+  margin: 0;
+  background: rgba(11,11,26,0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.screenshots-card img{
+  width: 100%;
+  height: 220px;        /* control size */
+  object-fit: cover;    /* consistent crop */
+  display: block;
+}
+
+.screenshots-card figcaption{
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  color: #cfcfe6;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .project-summary-grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+
+  .detail-card.full{
+    margin-top: 18px;
+  }
+
+  .screenshots-card .screenshot-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .screenshots-card img{
+    height: 200px;
+  }
+}
+
+
