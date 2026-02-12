@@ -1,4 +1,3 @@
-/* ===== Base ===== */
 :root{
   --bg: #0b0b1a;
   --text: #e7e7ea;
@@ -12,6 +11,8 @@
 }
 
 *{ box-sizing: border-box; }
+
+html{ scrollbar-gutter: stable; }
 
 body{
   margin: 0;
@@ -31,17 +32,10 @@ a{
   text-decoration: none;
 }
 
-.project-box:hover .cta {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-
-
-/* ===== Sidebar ===== */
 .sidebar{
   background-color: var(--card);
-  width: 240px;
-  padding: 32px 18px;
+  width: 280px;
+  padding: 26px 18px;
   box-shadow: var(--shadow);
   border-right: 1px solid rgba(255,255,255,0.05);
   position: fixed;
@@ -49,15 +43,24 @@ a{
   left: 0;
   bottom: 0;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(91,200,255,0.35) rgba(255,255,255,0.06);
+  scrollbar-gutter: stable;
+  z-index: 5;
 }
 
+.sidebar::-webkit-scrollbar{ width: 10px; }
+.sidebar::-webkit-scrollbar-track{ background: rgba(255,255,255,0.04); border-radius: 999px; }
+.sidebar::-webkit-scrollbar-thumb{ background: rgba(91,200,255,0.30); border-radius: 999px; border: 2px solid rgba(11,11,26,0.85); }
+.sidebar::-webkit-scrollbar-thumb:hover{ background: rgba(91,200,255,0.45); }
+
 .sidebar h1{
-  font-size: 1.8rem;
+  font-size: 1.85rem;
   margin: 0 0 8px;
   color: var(--accent2);
   position: relative;
   display: inline-block;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
 }
 
 .sidebar h1::after{
@@ -65,7 +68,7 @@ a{
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 60%;
+  width: 62%;
   height: 2px;
   background: var(--accent);
   border-radius: 2px;
@@ -73,28 +76,32 @@ a{
 
 .sidebar .role{
   color: var(--text);
-  margin: 0 0 20px;
+  margin: 0 0 22px;
 }
 
+.sidebar section{ margin: 0 0 22px; }
+.sidebar section:last-child{ margin-bottom: 0; }
+
 .sidebar h2{
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-transform: uppercase;
   color: var(--accent2);
-  letter-spacing: 1px;
-  margin-top: 24px;
-  margin-bottom: 8px;
+  letter-spacing: 0.14em;
+  margin: 0 0 10px;
 }
 
 .sidebar p{
   margin: 0 0 10px;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.55;
+  font-size: 0.95rem;
 }
 
-/* ===== Main content ===== */
+.sidebar p:last-child{ margin-bottom: 0; }
+
 .content{
-  margin-left: 260px;
-  padding: 0 40px;
+  margin-left: 290px;
+  padding: 28px 40px 28px;
 }
 
 #projects h2{
@@ -103,7 +110,6 @@ a{
   color: var(--accent2);
 }
 
-/* ===== Project grid (index.html) ===== */
 .projects-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -132,6 +138,10 @@ a{
   transform: translateY(-3px);
 }
 
+.project-box:hover .cta{
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 
 .project-box .box-inner{
   height: 100%;
@@ -171,27 +181,9 @@ a{
   border-top: 1px solid var(--border2);
 }
 
-.project-box .tags{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 6px;
-}
-
-.project-box .tags span{
-  font-size: 0.75rem;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid var(--border2);
-}
-
-/* ===== Tech stack pills (index + detail pages) ===== */
 .tech-stack{
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 18px 0 0;
+  max-width: 980px;
 }
 
 .tech-label{
@@ -199,7 +191,8 @@ a{
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 6px;
+  margin: 0 0 10px;
+  text-align: center;
 }
 
 .tech-pills{
@@ -207,9 +200,9 @@ a{
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  max-width: 90%;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255,255,255,0.20);
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin: 0 auto;
 }
 
 .tech-pills span{
@@ -221,27 +214,53 @@ a{
   color: var(--text);
 }
 
-/* ===== Links / utilities ===== */
 .back-link{
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin: 6px 0 16px;
+  margin: 6px 0 18px;
   color: var(--accent);
   font-weight: 700;
   text-decoration: none;
 }
 
 .section-split{
-  margin: 10px 0 4px;
+  margin: 16px 0;
   border-top: 1px solid rgba(255,255,255,0.08);
 }
 
-/* ===== Derby project detail layout (derby-projects.html) ===== */
-.project-title{
-  margin: 0 0 14px;
-  font-size: 1.6rem;
+.project-detail{
+  max-width: 980px;
+  margin: 0;
+}
+
+.project-detail h2{
+  margin: 0 0 10px;
+}
+
+.detail-card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 26px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+  max-width: 980px;
+  margin: 18px 0 18px;
+  min-height: 0;
+  height: auto;
+}
+
+.detail-card h3{
+  margin: 0 0 10px;
+  font-size: 1.2rem;
   color: var(--text);
+}
+
+.detail-card p{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+  max-width: 72ch;
 }
 
 .project-summary-grid{
@@ -272,56 +291,133 @@ a{
   line-height: 1.5;
 }
 
-.muted{
-  color: var(--muted);
+.muted{ color: var(--muted); }
+
+.cta-btn{ display: inline-block; }
+
+.screenshots-card{
+  overflow: hidden;
 }
 
-.cta-btn{
-  display: inline-block;
-}
-
-/* ===== Screenshot filmstrip gallery (Option B) ===== */
 .screenshots-card .screenshot-grid{
   display: flex;
-  gap: 14px;
+  gap: 16px;
   overflow-x: auto;
-  padding-bottom: 10px;
-  margin-top: 10px;
+  padding: 12px 6px 14px;
+  margin-top: 12px;
   scroll-snap-type: x mandatory;
+  scroll-padding-left: 6px;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+scrollbar-width: thin;
+scrollbar-color: rgba(255,255,255,0.25) transparent;
+}
+
+.screenshot-grid::-webkit-scrollbar{
+  height: 6px;
+}
+
+.screenshot-grid::-webkit-scrollbar-track{
+  background: transparent;
+}
+
+.screenshot-grid::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.25);
+  border-radius: 999px;
+}
+
+.screenshots-card .screenshot-grid::-webkit-scrollbar{
+  height: 0;
 }
 
 .screenshots-card .screenshot-grid figure{
   margin: 0;
-  flex: 0 0 260px;
-  background: var(--card);
-  border-radius: 12px;
+  flex: 0 0 240px;
+  background: rgba(11, 11, 26, 0.92);
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
   scroll-snap-align: start;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
 }
+
+.screenshots-card img{
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  display: block;
+  background: rgba(0,0,0,0.18);
+}
+
 
 .screenshots-card .screenshot-grid a{
   display: block;
   line-height: 0;
 }
-
-.screenshots-card img{
-  width: 100%;
-  height: 170px;
-  object-fit: contain;
-  display: block;
-  background: rgba(0,0,0,0.20);
+.screenshots-card figcaption{
+  padding: 14px 14px 16px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
 }
+
+.screenshots-card{
+  position: relative;
+}
+
+.screenshots-card::before,
+.screenshots-card::after{
+  content: "";
+  position: absolute;
+  top: 64px;
+  bottom: 18px;
+  width: 48px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.screenshots-card::before{
+  left: 0;
+  background: linear-gradient(90deg, rgba(11,11,26,0.95), rgba(11,11,26,0));
+}
+
+.screenshots-card::after{
+  right: 0;
+  background: linear-gradient(270deg, rgba(11,11,26,0.95), rgba(11,11,26,0));
+}
+
+@media (max-width: 700px){
+  .screenshots-card .screenshot-grid{
+    padding: 10px 2px 12px;
+    gap: 12px;
+  }
+
+  .screenshots-card .screenshot-grid figure{
+    flex-basis: 280px;
+  }
+
+  .screenshots-card img{
+    height: 180px;
+  }
+
+  .screenshots-card::before,
+  .screenshots-card::after{
+    width: 34px;
+  }
+}
+
 
 .screenshots-card figcaption{
   padding: 10px 12px;
   font-size: 0.85rem;
+  font-style: italic;
   color: var(--muted);
   border-top: 1px solid rgba(255,255,255,0.06);
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 900px){
   .project-summary-grid{
     grid-template-columns: 1fr;
@@ -339,12 +435,44 @@ a{
     height: auto;
     box-shadow: none;
     border-right: none;
-    padding: 24px 18px;
+    padding: 18px 16px;
+    overflow: visible;
+  }
+
+  .sidebar h1{
+    font-size: 1.55rem;
+  }
+
+  .sidebar .role{
+    margin: 4px 0 14px;
+  }
+
+  .sidebar section{
+    margin-bottom: 16px;
+  }
+
+  .sidebar h2{
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+  }
+
+  .sidebar p{
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
 
   .content{
     margin-left: 0;
-    padding: 20px;
+    padding: 16px 16px 22px;
+  }
+
+  .detail-card{
+    padding: 18px 18px;
+    margin: 14px 0 16px;
+  }
+
+  .tech-stack{
+    margin-top: 14px;
   }
 
   .screenshots-card .screenshot-grid figure{
